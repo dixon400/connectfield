@@ -1,0 +1,5 @@
+.env
+connectfield/node_modules/
+connectfield/vendor/bundle/
+connectfield/tmp/
+connectfield/config/master.key
