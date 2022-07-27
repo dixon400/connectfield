@@ -7,7 +7,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.lis
 RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
 
 # Default directory
-ENV INSTALL_PATH /opt/app
+ENV INSTALL_PATH /app
 RUN mkdir -p $INSTALL_PATH
 
 # Install gems
