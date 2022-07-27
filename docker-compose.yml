@@ -23,7 +23,7 @@ services:
     build:
       context: .
     volumes:
-      - ./connectfield:/opt/app
+      - ./connectfield:/app
     links:
       - postgres
       - redis
