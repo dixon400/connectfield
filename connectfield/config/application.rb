@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Connectfield
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.action_controller.include_all_helpers = false
     config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
