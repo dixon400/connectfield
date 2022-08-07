@@ -1,16 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 
 require File.expand_path('../config/environment', __dir__)
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
 require 'capybara/rspec'
 
-  config.include Devise::Test::IntegrationHelpers, type: :feature
-  config.include FactoryGirl::Syntax::Methods
-  Capybara.javascript_driver = :poltergeist
-  Capybara.server = :puma 
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -69,6 +65,10 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include FactoryGirl::Syntax::Methods
+  Capybara.javascript_driver = :poltergeist
+  Capybara.server = :puma 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
