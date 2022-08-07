@@ -57,9 +57,10 @@ gem 'jquery-rails'
 gem 'rspec-rails', '~> 3.6'
 gem 'factory_girl_rails'
 gem 'rails-controller-testing'
+gem "capybara"
 gem 'headless'
-gem 'capybara'
 gem 'poltergeist'
+gem 'phantomjs'
 gem 'database_cleaner'
 #######################
 
@@ -81,7 +82,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end

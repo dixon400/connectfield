@@ -3,6 +3,7 @@ version: "3.9"
 services:
 
   postgres:
+    container_name: connectfield_db
     image: postgres:14.2
     environment:
       POSTGRES_USER: connectfield
@@ -20,10 +21,12 @@ services:
       - connectfield-redis:/var/lib/redis/data
 
   connectfield:
+    container_name: connectfield
     build:
       context: .
     volumes:
       - ./connectfield:/app
+      - bundle_cache:/usr/local/bundle
     links:
       - postgres
       - redis
@@ -45,3 +48,4 @@ services:
 volumes:
   connectfield-postgres:
   connectfield-redis:
+  bundle_cache:
