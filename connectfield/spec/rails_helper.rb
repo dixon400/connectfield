@@ -68,6 +68,10 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
   Capybara.javascript_driver = :poltergeist
+  require 'phantomjs' 
+  Capybara.register_driver :poltergeist do |app|
+      Capybara::Poltergeist::Driver.new(app, :phantomjs => Phantomjs.path)
+  end
   Capybara.server = :puma 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
